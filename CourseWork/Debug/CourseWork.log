@@ -1,8 +1,6 @@
-﻿  stdafx.cpp
-C:\Users\kiril\Documents\GitHub\check_os_project\CourseWork\stdafx.h(31,2): warning C4091: typedef : пропускается слева от "THREADS", когда ни одна переменная не объявлена
-  CourseWork.cpp
-C:\Users\kiril\Documents\GitHub\check_os_project\CourseWork\CourseWork.cpp(203,31): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-C:\Users\kiril\Documents\GitHub\check_os_project\CourseWork\CourseWork.cpp(208,49): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-C:\Users\kiril\Documents\GitHub\check_os_project\CourseWork\CourseWork.cpp(338,18): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\kiril\Documents\GitHub\check_os_project\CourseWork\CourseWork.cpp(359,16): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+﻿  CourseWork.cpp
+C:\Users\kiril\Documents\GitHub\check_os_project\CourseWork\CourseWork.cpp(198,31): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+C:\Users\kiril\Documents\GitHub\check_os_project\CourseWork\CourseWork.cpp(203,49): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+C:\Users\kiril\Documents\GitHub\check_os_project\CourseWork\CourseWork.cpp(314,18): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\kiril\Documents\GitHub\check_os_project\CourseWork\CourseWork.cpp(335,16): warning C4244: =: преобразование "double" в "int", возможна потеря данных
   CourseWork.vcxproj -> C:\Users\kiril\Documents\GitHub\check_os_project\Debug\CourseWork.exe

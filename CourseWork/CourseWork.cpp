@@ -104,7 +104,6 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 	wcex.hIcon			= LoadIcon(hInstance, MAKEINTRESOURCE(IDI_ICON1));
 	wcex.hCursor		= LoadCursor(NULL, IDC_ARROW);
 	wcex.hbrBackground	= (HBRUSH)(COLOR_WINDOW);
-	//wcex.hbrBackground = CreatePatternBrush(LoadBitmap(hInstance, MAKEINTRESOURCE(IDB_BITMAP1)));
 
 	wcex.lpszMenuName	= MAKEINTRESOURCE(IDC_COURSEWORK);
 	wcex.lpszClassName	= szWindowClass;
@@ -138,7 +137,6 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    Thread.handleThread = NULL;
    Thread.ThreadFucntion = ThreadProc;
-   //Thread.idcTimeEdit = IDC_EDIT1;
    Thread.handleDialog = hWnd;
    Thread.time = 0;
    Thread.handleThread = CreateThread(NULL, 0, Thread.ThreadFucntion, NULL, NULL, &Thread.threadId);
@@ -182,9 +180,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		
 		switch (wmId)
 		{
-		case IDM_ABOUT:
-			DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
-			break;
 		case IDM_EXIT:
 			DestroyWindow(hWnd);
 			break;
@@ -289,25 +284,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	return 0;
 }
 
-// Message handler for about box.
-INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
-{
-	UNREFERENCED_PARAMETER(lParam);
-	switch (message)
-	{
-	case WM_INITDIALOG:
-		return (INT_PTR)TRUE;
-
-	case WM_COMMAND:
-		if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL)
-		{
-			EndDialog(hDlg, LOWORD(wParam));
-			return (INT_PTR)TRUE;
-		}
-		break;
-	}
-	return (INT_PTR)FALSE;
-}
 
 DWORD WINAPI ThreadProc(LPVOID lpParam)
 {
