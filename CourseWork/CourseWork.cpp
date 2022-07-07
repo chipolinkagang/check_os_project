@@ -9,7 +9,6 @@
 #include <WinUser.h>
 #include "Commdlg.h"
 #include<Strsafe.h>
-#include "TlHelp32.h"
 #include <string.h>
 #include <stdint.h>
 #include <memory>
@@ -48,7 +47,6 @@ static THREADS Thread;
 ATOM MyRegisterClass(HINSTANCE hInstance);
 BOOL InitInstance(HINSTANCE, int);
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
-INT_PTR CALLBACK About(HWND, UINT, WPARAM, LPARAM);
 DWORD WINAPI ThreadProc(LPVOID);
 
 int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
@@ -114,11 +112,11 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 
 BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
-	HWND hWnd;// , edit_cpu, edit_mem, edit_mem2, edit2;
+	HWND hWnd;
 	
-   hInst = hInstance; // Store instance handle in our global variable
+    hInst = hInstance; // Store instance handle in our global variable
 
-   hWnd = CreateWindow(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
+    hWnd = CreateWindow(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
       300, 200, 0, 0, NULL, NULL, hInstance, NULL);
 
    if (!hWnd)
@@ -172,22 +170,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		pInfo->ptMinTrackSize = Min;
 		return 0;
 
-	case WM_COMMAND:
-		wmId    = LOWORD(wParam);
-		wmEvent = HIWORD(wParam);
-
-		// Parse the menu selections:
-		
-		switch (wmId)
-		{
-		case IDM_EXIT:
-			DestroyWindow(hWnd);
-			break;
-		default:
-			return DefWindowProc(hWnd, message, wParam, lParam);
-		}
-		break;
-
 	case WM_PAINT:
 		GetClientRect(hWnd, &rect_window);
 		hdc = BeginPaint(hWnd, &ps);
@@ -213,7 +195,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		hpen = CreatePen(PS_SOLID, 0, RGB(0, 128, 64));
 		SelectObject(hdc, hpen);
 
-		//grid
 		
 		count+=3;
 
@@ -293,7 +274,6 @@ DWORD WINAPI ThreadProc(LPVOID lpParam)
 	{
 		if (GetSystemTimes(&idleTime, &kernelTime, &userTime) != 0)
 		{
-			//Sleep(100);
 
 			double usr = userTime.dwLowDateTime - last_userTime.dwLowDateTime;
 			double ker = kernelTime.dwLowDateTime - last_kernelTime.dwLowDateTime;
@@ -329,6 +309,7 @@ DWORD WINAPI ThreadProc(LPVOID lpParam)
 
 		
 		memory = statex.dwMemoryLoad;
+
 		for (int i = SIZE - 1; i > 0; i--){
 			mem_mas[i] = mem_mas[i - 1];
 		}
@@ -337,7 +318,7 @@ DWORD WINAPI ThreadProc(LPVOID lpParam)
 		wsprintfW(mem_char, L"%d %% RAM", (int)memory);
 		SetDlgItemText(Thread.handleDialog, ID_MEM, mem_char);
 
-		if(((int)memory > 80) && ((int)cpu > 80))
+		if(((int)memory > 90) || ((int)cpu > 90))
 			wsprintfW(buffer, L"Компьютер перегружен. Оптимизируйте его работу, либо обновите конфигурацию.\r\n");
 		else
 			wsprintfW(buffer, L"Нагрузка в рамках допустимой. Приятной работы!.\r\n");

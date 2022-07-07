@@ -1,6 +1,8 @@
 ﻿  CourseWork.cpp
-C:\Users\kiril\Documents\GitHub\check_os_project\CourseWork\CourseWork.cpp(198,31): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-C:\Users\kiril\Documents\GitHub\check_os_project\CourseWork\CourseWork.cpp(203,49): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-C:\Users\kiril\Documents\GitHub\check_os_project\CourseWork\CourseWork.cpp(314,18): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\kiril\Documents\GitHub\check_os_project\CourseWork\CourseWork.cpp(335,16): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\kiril\Documents\GitHub\check_os_project\CourseWork\CourseWork.cpp(180,31): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+C:\Users\kiril\Documents\GitHub\check_os_project\CourseWork\CourseWork.cpp(185,49): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+C:\Users\kiril\Documents\GitHub\check_os_project\CourseWork\CourseWork.cpp(155,12): warning C4101: wmEvent: неиспользованная локальная переменная
+C:\Users\kiril\Documents\GitHub\check_os_project\CourseWork\CourseWork.cpp(155,6): warning C4101: wmId: неиспользованная локальная переменная
+C:\Users\kiril\Documents\GitHub\check_os_project\CourseWork\CourseWork.cpp(294,18): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\kiril\Documents\GitHub\check_os_project\CourseWork\CourseWork.cpp(316,16): warning C4244: =: преобразование "double" в "int", возможна потеря данных
   CourseWork.vcxproj -> C:\Users\kiril\Documents\GitHub\check_os_project\Debug\CourseWork.exe
